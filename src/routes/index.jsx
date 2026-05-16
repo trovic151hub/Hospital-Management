@@ -8,7 +8,7 @@ import {
 } from "lucide-react"
 
 import heroImg from "@/assets/hero.jpg"
-import heroVideo from "@/assets/hero.mp4"
+import heroVideo from "@/assets/hero.mp4?url"
 import { cars } from "@/data/cars"
 import { CarCard } from "@/components/car-card"
 
