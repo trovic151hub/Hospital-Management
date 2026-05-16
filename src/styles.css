@@ -23,15 +23,19 @@
   box-sizing: border-box;
 }
 
-html,
+html {
+  background: var(--color-background);
+  color: var(--color-foreground);
+}
+
 body {
   font-family: "Inter", system-ui, sans-serif;
-  background-color: #0a0a0a;
-  color: #fafafa;
+  background: var(--color-background);
+  color: var(--color-foreground);
   min-height: 100vh;
   margin: 0;
 }
 
 .font-display {
-  font-family: "Instrument Serif", serif;
+  font-family: var(--font-display);
 }
