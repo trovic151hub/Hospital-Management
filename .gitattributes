@@ -1,0 +1,2 @@
+attached_assets/generated_videos/hero-luxury-car.mp4 filter=lfs diff=lfs merge=lfs -text
+src/assets/hero.mp4 filter=lfs diff=lfs merge=lfs -text

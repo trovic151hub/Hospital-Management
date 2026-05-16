@@ -8,6 +8,7 @@ import {
 } from "lucide-react"
 
 import heroImg from "@/assets/hero.jpg"
+import heroVideo from "@/assets/hero.mp4"
 import { cars } from "@/data/cars"
 import { CarCard } from "@/components/car-card"
 
@@ -47,11 +48,16 @@ function HomePage() {
       {/* HERO */}
       <section className="relative -mt-16 overflow-hidden">
         <div className="absolute inset-0">
-          <img
-            src={heroImg}
-            alt="Black luxury coupe on a Lisbon cobblestone street"
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            poster={heroImg}
             className="h-full w-full object-cover"
-          />
+          >
+            <source src={heroVideo} type="video/mp4" />
+          </video>
           <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/40 to-background" />
         </div>
 
