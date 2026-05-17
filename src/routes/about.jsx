@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router"
+import { useEffect, useRef, useState } from "react"
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -22,11 +23,68 @@ export const Route = createFileRoute("/about")({
 })
 
 const stats = [
-  { v: "8", l: "Cars in the fleet" },
-  { v: "4", l: "Cities across Nigeria" },
-  { v: "1.2k", l: "Drivers each year" },
-  { v: "4.9", l: "Average rating" },
+  { end: 8,    decimals: 0, suffix: "",  label: "Cars in the fleet" },
+  { end: 4,    decimals: 0, suffix: "",  label: "Cities across Nigeria" },
+  { end: 1.2,  decimals: 1, suffix: "k", label: "Drivers each year" },
+  { end: 4.9,  decimals: 1, suffix: "",  label: "Average rating" },
 ]
+
+function useCountUp(end, decimals, duration = 1800) {
+  const [value, setValue] = useState(0)
+  const [started, setStarted] = useState(false)
+  const ref = useRef(null)
+
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !started) {
+          setStarted(true)
+        }
+      },
+      { threshold: 0.3 }
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [started])
+
+  useEffect(() => {
+    if (!started) return
+
+    const startTime = performance.now()
+    const factor = Math.pow(10, decimals)
+
+    const tick = (now) => {
+      const elapsed = now - startTime
+      const progress = Math.min(elapsed / duration, 1)
+      const eased = 1 - Math.pow(1 - progress, 3)
+      setValue(Math.round(eased * end * factor) / factor)
+      if (progress < 1) requestAnimationFrame(tick)
+    }
+
+    requestAnimationFrame(tick)
+  }, [started, end, decimals, duration])
+
+  return { value, ref }
+}
+
+function StatItem({ end, decimals, suffix, label }) {
+  const { value, ref } = useCountUp(end, decimals)
+  const display = decimals > 0 ? value.toFixed(decimals) : String(Math.round(value))
+
+  return (
+    <div ref={ref} className="flex flex-col items-center text-center">
+      <div className="font-display text-5xl text-primary">
+        {display}{suffix}
+      </div>
+      <div className="mt-2 text-xs uppercase tracking-[0.2em] text-muted-foreground">
+        {label}
+      </div>
+    </div>
+  )
+}
 
 function AboutPage() {
   return (
@@ -59,12 +117,7 @@ function AboutPage() {
       <section className="border-y border-border/60 bg-card/30">
         <div className="mx-auto grid max-w-7xl grid-cols-2 gap-8 px-6 py-16 md:grid-cols-4 lg:px-10">
           {stats.map((s) => (
-            <div key={s.l}>
-              <div className="font-display text-5xl text-primary">{s.v}</div>
-              <div className="mt-2 text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                {s.l}
-              </div>
-            </div>
+            <StatItem key={s.label} {...s} />
           ))}
         </div>
       </section>
