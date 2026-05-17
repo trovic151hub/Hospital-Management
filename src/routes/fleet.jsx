@@ -31,7 +31,7 @@ export const Route = createFileRoute("/fleet")({
 
 function FleetPage() {
   const [active, setActive] = useState("All")
-  const [maxPrice, setMaxPrice] = useState(600)
+  const [maxPrice, setMaxPrice] = useState(850000)
 
   const filtered = useMemo(() => {
     return cars.filter(
@@ -86,14 +86,14 @@ function FleetPage() {
           {/* Price Filter */}
           <div className="flex items-center gap-4">
             <label className="text-xs uppercase tracking-[0.15em] text-muted-foreground">
-              Up to €{maxPrice}/day
+              Up to ₦{maxPrice.toLocaleString()}/day
             </label>
 
             <input
               type="range"
-              min={75}
-              max={600}
-              step={5}
+              min={120000}
+              max={850000}
+              step={10000}
               value={maxPrice}
               onChange={(e) => setMaxPrice(Number(e.target.value))}
               className="w-40 accent-[var(--primary)]"

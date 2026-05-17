@@ -30,7 +30,7 @@ export function CarCard({ car }) {
 
           <div className="shrink-0 text-right">
             <span className="font-display text-2xl text-primary">
-              €{car.pricePerDay}
+              ₦{car.pricePerDay.toLocaleString()}
             </span>
             <p className="text-[10px] uppercase tracking-[0.15em] text-muted-foreground">
               /day

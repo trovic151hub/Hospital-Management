@@ -14,7 +14,7 @@ export function SiteFooter() {
           </div>
 
           <p className="text-sm text-muted-foreground">
-            A curated fleet of luxury, sports and electric cars. Delivered across Portugal.
+            A curated fleet of luxury, sports and electric cars. Delivered across Nigeria.
           </p>
         </div>
 
@@ -31,16 +31,16 @@ export function SiteFooter() {
         </FooterCol>
 
         <FooterCol title="Contact">
-          <p className="text-sm text-muted-foreground">Rua Garrett 42, Lisboa</p>
-          <p className="text-sm text-muted-foreground">+351 210 000 000</p>
-          <p className="text-sm text-muted-foreground">hello@vantagerentals.pt</p>
+          <p className="text-sm text-muted-foreground">10 Adeola Odeku St, Victoria Island, Lagos</p>
+          <p className="text-sm text-muted-foreground">+234 801 000 0000</p>
+          <p className="text-sm text-muted-foreground">hello@vantagerentals.ng</p>
         </FooterCol>
       </div>
 
       <div className="border-t border-border/60">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-6 py-6 text-xs text-muted-foreground md:flex-row lg:px-10">
           <span>© {new Date().getFullYear()} Vantage Rentals. All rights reserved.</span>
-          <span>Lisbon · Porto · Algarve</span>
+          <span>Lagos · Abuja · Port Harcourt</span>
         </div>
       </div>
     </footer>

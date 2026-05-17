@@ -15,11 +15,11 @@ import { CarCard } from "@/components/car-card"
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Vantage Rentals — Premium car hire in Lisbon" },
+      { title: "Vantage Rentals — Premium car hire in Lagos" },
       {
         name: "description",
         content:
-          "Hand-picked luxury, sports and electric cars delivered to you anywhere in Portugal.",
+          "Hand-picked luxury, sports and electric cars delivered to you anywhere in Nigeria.",
       },
       {
         property: "og:title",
@@ -28,7 +28,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Hand-picked luxury, sports and electric cars delivered to you anywhere in Portugal.",
+          "Hand-picked luxury, sports and electric cars delivered to you anywhere in Nigeria.",
       },
       {
         property: "og:image",
@@ -64,7 +64,7 @@ function HomePage() {
         <div className="relative mx-auto flex min-h-[92vh] max-w-7xl flex-col justify-end px-6 pb-20 pt-32 lg:px-10">
           <span className="mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-primary/30 bg-background/40 px-4 py-1.5 text-[11px] uppercase tracking-[0.25em] text-primary backdrop-blur">
             <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-            Lisbon · Porto · Algarve
+            Lagos · Abuja · Port Harcourt
           </span>
 
           <h1 className="font-display text-5xl leading-[1.02] text-foreground md:text-7xl lg:text-[5.5rem]">
@@ -159,7 +159,7 @@ function HomePage() {
           </blockquote>
 
           <p className="mt-6 text-sm uppercase tracking-[0.25em] text-muted-foreground">
-            Marta R. · Lisbon
+            Marta R. · Lagos
           </p>
         </div>
       </section>

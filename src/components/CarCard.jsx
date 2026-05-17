@@ -52,7 +52,7 @@ export function CarCard({ car }) {
 
           <div className="text-right">
             <div className="font-display text-2xl text-primary">
-              €{car.pricePerDay}
+              ₦{car.pricePerDay.toLocaleString()}
             </div>
             <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
               per day

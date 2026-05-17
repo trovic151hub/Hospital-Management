@@ -23,7 +23,7 @@ export const Route = createFileRoute("/about")({
 
 const stats = [
   { v: "8", l: "Cars in the fleet" },
-  { v: "4", l: "Cities across Portugal" },
+  { v: "4", l: "Cities across Nigeria" },
   { v: "1.2k", l: "Drivers each year" },
   { v: "4.9", l: "Average rating" },
 ]
@@ -42,7 +42,7 @@ function AboutPage() {
 
         <p className="mt-8 text-lg text-muted-foreground">
           Vantage started in 2019 with a single Porsche 911, a garage in
-          Alcântara, and a stubborn idea: that renting a car shouldn't feel
+          Victoria Island, and a stubborn idea: that renting a car shouldn't feel
           like the worst part of a trip. We kept the fleet small on purpose.
           Eight cars, each one chosen because we wanted to drive it ourselves.
         </p>

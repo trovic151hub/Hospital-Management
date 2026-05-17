@@ -27,7 +27,7 @@ export const Route = createFileRoute("/fleet/$carId")({
           { title: `${loaderData.car.name} — Vantage Rentals` },
           {
             name: "description",
-            content: `${loaderData.car.tagline}. Reserve the ${loaderData.car.name} from €${loaderData.car.pricePerDay}/day.`,
+            content: `${loaderData.car.tagline}. Reserve the ${loaderData.car.name} from ₦${loaderData.car.pricePerDay.toLocaleString()}/day.`,
           },
           {
             property: "og:title",
@@ -155,7 +155,7 @@ function CarPage() {
 
             <div className="my-8 flex items-baseline gap-2">
               <span className="font-display text-5xl text-primary">
-                €{car.pricePerDay}
+                ₦{car.pricePerDay.toLocaleString()}
               </span>
 
               <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground">

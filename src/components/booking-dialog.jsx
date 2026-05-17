@@ -35,7 +35,7 @@ export function BookingDialog({ car, open, onOpenChange }) {
         </button>
 
         <h2 className="font-display text-2xl">Reserve {car.name}</h2>
-        <p className="mt-1 text-sm text-muted-foreground">€{car.pricePerDay}/day · All inclusive</p>
+        <p className="mt-1 text-sm text-muted-foreground">₦{car.pricePerDay.toLocaleString()}/day · All inclusive</p>
 
         <form onSubmit={onSubmit} className="mt-6 space-y-4">
           <div className="grid gap-4 md:grid-cols-2">

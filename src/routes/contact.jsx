@@ -65,15 +65,15 @@ function ContactPage() {
         {/* Contact Info */}
         <div className="space-y-8 lg:col-span-2">
           <ContactRow icon={<Mail className="h-4 w-4" />} title="Email">
-            hello@vantagerentals.pt
+            hello@vantagerentals.ng
           </ContactRow>
 
           <ContactRow icon={<Phone className="h-4 w-4" />} title="Phone">
-            +351 210 000 000
+            +234 801 000 0000
           </ContactRow>
 
           <ContactRow icon={<MapPin className="h-4 w-4" />} title="Studio">
-            Rua Garrett 42, 1200-203 Lisboa
+            10 Adeola Odeku Street, Victoria Island, Lagos
           </ContactRow>
         </div>
 
@@ -101,7 +101,7 @@ function ContactPage() {
             <Input
               required
               name="subject"
-              placeholder="Weekend in the Algarve"
+              placeholder="Weekend in Abuja"
             />
           </Field>
 
